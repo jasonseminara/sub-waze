@@ -1,0 +1,28 @@
+{key:"1",line:"1",desc:"Broadway - 7 Avenue Local"}
+{key:"2",line:"2",desc:"7 Avenue Express"}
+{key:"3",line:"3",desc:"7 Avenue Express"}
+{key:"4",line:"4",desc:"Lexington Avenue Express"}
+{key:"5",line:"5",desc:"Lexington Avenue Express"}
+{key:"5X",line:"5X",desc:"Lexington Avenue Express"}
+{key:"6",line:"6",desc:"Lexington Avenue Local"}
+{key:"6X",line:"6X",desc:"Lexington Avenue Express"}
+{key:"7",line:"7",desc:"Flushing Local"}
+{key:"7X",line:"7X",desc:"Flushing Express"}
+{key:"GS",line:"S",desc:"42 St Shuttle"}
+{key:"A",line:"A",desc:"8 Avenue Express"}
+{key:"B",line:"B",desc:"6 Avenue Express"}
+{key:"C",line:"C",desc:"8 Avenue Local"}
+{key:"D",line:"D",desc:"6 Avenue Express"}
+{key:"E",line:"E",desc:"8 Avenue Local"}
+{key:"F",line:"F",desc:"Queens Blvd Express/ 6 Av Local"}
+{key:"FS",line:"S",desc:"Franklin Avenue Shuttle"}
+{key:"G",line:"G",desc:"Brooklyn-Queens Crosstown"}
+{key:"J",line:"J",desc:"Nassau St Local"}
+{key:"L",line:"L",desc:"14 St-Canarsie Local"}
+{key:"M",line:"M",desc:"QNS BLVD-6th AVE/ Myrtle Local"}
+{key:"N",line:"N",desc:"Broadway Express"}
+{key:"Q",line:"Q",desc:"Broadway Express"}
+{key:"R",line:"R",desc:"Broadway Local"}
+{key:"H",line:"S",desc:"Rockaway Park Shuttle"}
+{key:"Z",line:"Z",desc:"Nassau St Express"}
+{key:"SI",line:"SIR",desc:"Staten Island Railway"}

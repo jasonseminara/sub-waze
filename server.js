@@ -2,7 +2,7 @@
 const express         = require('express')
 const logger          = require('morgan')
 const path            = require('path')
-const env             = require('dotenv')
+
 const app             = express()
 const reports         = require('./routes/reports')
 const PORT            = process.env.PORT || process.argv[2] || 3000
@@ -17,6 +17,7 @@ app.set('view engine', 'ejs')
 // setting out static assets directory
 app.use(express.static(path.join(__dirname,'public')));
 
+
 app.listen(PORT, function(){
   console.log("server up and running on port ", PORT)
 })
@@ -27,12 +28,4 @@ app.listen(PORT, function(){
 app.get('/', function(req,res){
   res.render('home')
 })
-
-
-
-
-
-
-
-
 
