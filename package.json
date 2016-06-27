@@ -1,0 +1,34 @@
+{
+  "name": "sub-waze",
+  "version": "0.0.1",
+  "description": "A real-time subway lateness preporter",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonseminara/sub-waze.git"
+  },
+  "keywords": [
+    "subway",
+    "mta",
+    "lateness",
+    "waze"
+  ],
+  "author": "Jason Seminara",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasonseminara/sub-waze/issues"
+  },
+  "homepage": "https://github.com/jasonseminara/sub-waze#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "dotenv": "^2.0.0",
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7"
+  }
+}
