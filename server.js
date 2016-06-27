@@ -1,14 +1,15 @@
-/* set up the Tom Cruise Movie  DB */
 'use strict'
 const express         = require('express')
 const logger          = require('morgan')
 const path            = require('path')
 const env             = require('dotenv')
 const app             = express()
+const reports         = require('./routes/reports')
 const PORT            = process.env.PORT || process.argv[2] || 3000
 
 // set up logging so that we can see what's happening
 app.use( logger('dev') )
+app.use('/reports', reports)
 
 // set up ejs to render the views
 app.set('view engine', 'ejs')
@@ -26,4 +27,12 @@ app.listen(PORT, function(){
 app.get('/', function(req,res){
   res.render('home')
 })
+
+
+
+
+
+
+
+
 
