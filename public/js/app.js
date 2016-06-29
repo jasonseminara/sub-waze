@@ -1,35 +1,39 @@
-
-
+'use strict'
 $(function(){
 
+  // only for the homepage
   $('.button-collapse').sideNav();
   $('.parallax').parallax();
 
 
-  // Some jquery mothods that we can grab as soon as the page loads
+  // Some jquery methods that we can grab as soon as the page loads
 
-  const $form            = $('#subwayReportForm')
-  const url              = $form.attr( 'action' )
+  const $form     = $('#subwayReportForm')
+  const url       = $form.attr( 'action' )
+  let loc         = {}
 
-  //todo: what should we do if the browser doesn't support geolocation?
-  const geoLocator       = navigator.geolocation? navigator.geolocation : ()=>({watchPosition(){}})
-  const loc = {coords:{latitude:null,longitude:null}, timestamp:null}
+  // do this when we get gps coordinates (this might take like 5 seconds)
+  // es6 deconstructors here
+  const setLocation = function({coords:{latitude,longitude},timestamp}){
+    loc = {latitude,longitude,timestamp}
+  }
 
-  const setLocation = function(gp){
-      loc.coords = { latitude:gp.coords.latitude, longitude:gp.coords.longitude }
-      loc.timestamp = gp.timestamp
-      return
-    }
-
-  geoLocator.watchPosition( setLocation )
+  // if the navigator is available, watch our position
+  navigator.geolocation && navigator.geolocation.watchPosition && navigator.geolocation.watchPosition( setLocation )
 
   // If we submit the form...
   // insert the geolocation data
   $form.submit( event=> {
+
     $form.append(
-      $('<input />',{name:'lon',value:loc.coords.longitude}),
-      $('<input />',{name:'lat',value:loc.coords.latitude}),
-      $('<input />',{name:'timestamp',value:loc.timestamp})
+      /* generate an array of hidden inputs for each of the location items */
+      Object.keys( loc ).map( key=>
+        $('<input />',{
+          type:'hidden',
+          name:key,
+          value:loc[key]
+        })
+      )
     )
   })
 })

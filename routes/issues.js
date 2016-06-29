@@ -2,7 +2,7 @@
 'use strict'
 const express    = require('express')
 const bodyParser = require('body-parser')
-const reports    = express.Router();
+const issues    = express.Router();
 const mtaService = require('../service/mtaService')
 
 // create application/json parser
@@ -11,15 +11,12 @@ const jsonParser = bodyParser.json()
 // create application/x-www-form-urlencoded parser
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-reports.get( '/new', mtaService.listLines,  (req,res)=>{
-  console.log(res.lines)
-  res.render('report_new', {lines:res.lines})
+issues.get( '/new', mtaService.listLines,  (req,res)=>{
+  res.render( 'issue_new' , {lines:res.lines,exits:{create:'/issues'}} )
 })
 
-// reports.route('/:id/edit')
 
-
-reports.route('/:id')
+issues.route('/:id')
   .get((req,res)=>{
     res.send(`show ${req.params.id} report`)
   })
@@ -31,13 +28,14 @@ reports.route('/:id')
   })
 
 
-reports.route('/')
+issues.route('/')
   .get((req,res)=>{
-    res.send('list reports')
+    res.send('list issues')
   })
   .post(urlencodedParser, mtaService.create, (req,res)=>{
     // todo: render the report_list page
-    res.json(req.body)
+
+    res.redirect('/')
   })
 
-module.exports = reports;
+module.exports = issues;

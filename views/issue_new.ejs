@@ -10,7 +10,7 @@
       <div class="container">
         <div class="col card-panel blue-grey lighten-5">
           <h4>Submit a report</h4>
-          <form action="/reports" method="post" id="subwayReportForm"  >
+          <form action="<%=exits.create %>" method="post" id="subwayReportForm"  >
             <select class="browser-default " name="line">
               <option value="" selected>Choose your line</option>
               <% lines.forEach( function(line){ %>
@@ -27,7 +27,7 @@
 
             <div class="row">
               <div class="input-field col">
-                <button class="waves-effect waves-light btn-large" type="submit" name="action">Report
+                <button class="waves-effect waves-light btn-large" type="submit">Report
                   <i class="material-icons right">send</i>
                 </button>
               </div>
@@ -40,6 +40,5 @@
 
   <% include partials/footer %>
   <% include partials/jslibs %>
-  <script src="/js/newReport.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 </html>
