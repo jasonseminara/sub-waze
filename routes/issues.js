@@ -30,12 +30,12 @@ issues.route('/:id')
 
 issues.route('/')
   .get((req,res)=>{
-    res.send('list issues')
+    res.render('issue_list')
   })
   .post(urlencodedParser, mtaService.create, (req,res)=>{
     // todo: render the report_list page
 
-    res.redirect('/')
+    res.redirect('/issues')
   })
 
 module.exports = issues;
