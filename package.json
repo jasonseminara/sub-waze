@@ -1,7 +1,9 @@
 {
   "name": "sub-waze",
-  "version": "0.0.1",
-  "engine": "node >=6.2.1",
+  "version": "0.1.1",
+  "engines": {
+    "node":"6.2.1"
+  },
   "description": "A real-time subway lateness preporter",
   "main": "server.js",
   "scripts": {
